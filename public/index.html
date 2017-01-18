@@ -2,32 +2,51 @@
 <html>
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
   </head>
+
   <body>
-    <div id="car">
-      <input class="model" type="text" placeholder="Car model"/>
-      <input class="price-by-day" type="number" placeholder="Price by day"/>
-      <input class="price-by-km" type="number" placeholder="Price by km"/>
+    <div class="form-style-5">
+      <img id = "drivylogo" src = "img/logo-drivy.png"/>
+      <h1>Rental simulator</h1>
+      <div id="form">
+        <fieldset>
+          <div id ="car">
+            <legend><span class="number">1</span> Car Model Info</legend>
+            <input class="model" type="text" name="field1" placeholder="Car model"/>
+            <input class="price-by-day" type="number" name="field2" placeholder="Price by day"/>
+            <input class="price-by-km" type="number" name="field3" placeholder="Price by km"/>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <div id = "rental">
+            <legend><span class="number">2</span> Rental Info</legend>
+            <input class="begin" type="date" name="field4" placeholder="Rental begin"/>
+            <input class="end" type="date" name="field5" placeholder="Rental end"/>
+            <input class="distance" type="number" name="field6" placeholder="Distance (km)"/>
+            <input class="option" type="checkbox" placeholder="Deductible option"/> Deductible option
+          </div>
+        </fieldset>
+        <br>
+        <button id="compute">Compute</button>
+      </div>
     </div>
-    <div id="rental">
-      <input class="begin" type="date" placeholder="Rental begin date"/>
-      <input class="end" type="date" placeholder="Rental end date"/>
-      <input class="distance" type="number" placeholder="Distance in km"/>
-      <input class="option" type="checkbox" placeholder="Deductible option"/>
+
+    <div class="form-style-5">
+      <div id="actors"></div>
+      <script id="template" type="x-tmpl-mustache">
+        {{#actors}}
+          <div class="actor">
+            <span>{{who}}</span>
+            <span>{{type}}</span>
+            <span>{{amount}}</span>
+          </div>
+        {{/actors}}
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
+      <script src="drivy.js"></script>
+      <script src="index.js"></script>
     </div>
-    <button id="compute">Compute</button>
-    <div id="actors"></div>
-    <script id="template" type="x-tmpl-mustache">
-      {{#actors}}
-        <div class="actor">
-          <span>{{who}}</span>
-          <span>{{type}}</span>
-          <span>{{amount}}</span>
-        </div>
-      {{/actors}}
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/mustache.js/2.2.1/mustache.min.js"></script>
-    <script src="drivy.js"></script>
-    <script src="index.js"></script>
   </body>
 </html>
