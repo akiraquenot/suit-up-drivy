@@ -11,6 +11,10 @@ html {
   margin: 0px 400px 0px;
 }
 
+div:empty {
+  display:none;
+}
+
 .form-style-5{
     max-width: 500px;
     padding: 10px 20px;

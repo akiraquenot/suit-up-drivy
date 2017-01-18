@@ -3,18 +3,24 @@
   <head>
     <title>CSS/HTML Workshop with Drivy</title>
     <link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="utf-8">
   </head>
 
   <body>
-    <div class="form-style-5">
+    <div class="form-style-5" id = "form">
+      <!--
+      <div id = "logodiv" style="position:relative; width:100%; height:100%">
+      <img id = "drivylogo" src = "img/pinky.png"/>
       <img id = "drivylogo" src = "img/logo-drivy.png"/>
+      </div>
+      -->
       <h1>Rental simulator</h1>
       <div id="form">
         <fieldset>
           <div id ="car">
             <legend><span class="number">1</span> Car Model Info</legend>
-            <input class="model" type="text" name="field1" placeholder="Car model"/>
-            <input class="price-by-day" type="number" name="field2" placeholder="Price by day"/>
+            <input id="datepicker" class="model" type="text" name="field1" placeholder="Car model"/>
+            <input id="datepicker" class="price-by-day" type="number" name="field2" placeholder="Price by day"/>
             <input class="price-by-km" type="number" name="field3" placeholder="Price by km"/>
           </div>
         </fieldset>
@@ -33,9 +39,9 @@
       </div>
     </div>
 
-    <div class="form-style-5">
-      <div id="actors"></div>
-      <script id="template" type="x-tmpl-mustache">
+    <div class="form-style-5" id="results">
+    <div id="actors"></div>
+    <script id="template" type="x-tmpl-mustache">
         {{#actors}}
           <div class="actor">
             <span>{{who}}</span>
